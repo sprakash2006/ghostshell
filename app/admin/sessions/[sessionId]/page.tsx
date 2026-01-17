@@ -4,11 +4,11 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Shield, ChevronLeft, AlertTriangle } from "lucide-react";
 import {
-  getSessionById,
   getThreatColor,
   formatDuration,
   formatTime,
 } from "@/lib/mock-data";
+import { useSessions } from "@/lib/session-context";
 import {
   LineChart,
   Line,
@@ -20,9 +20,10 @@ import {
 } from "recharts";
 
 export default function SessionDetail() {
+  const { sessions } = useSessions();
   const params = useParams();
   const sessionId = params.sessionId as string;
-  const session = getSessionById(sessionId);
+  const session = sessions.find((s) => s.id === sessionId);
 
   if (!session) {
     return (
@@ -232,11 +233,10 @@ export default function SessionDetail() {
                       {cmd.command}
                     </code>
                     <span
-                      className={`text-xs px-2 py-1 rounded capitalize font-medium ${
-                        cmd.threat === "normal"
-                          ? "bg-gray-700 text-gray-300"
-                          : "bg-opacity-20 " + threatColors[cmd.threat]
-                      }`}
+                      className={`text-xs px-2 py-1 rounded capitalize font-medium ${cmd.threat === "normal"
+                        ? "bg-gray-700 text-gray-300"
+                        : "bg-opacity-20 " + threatColors[cmd.threat]
+                        }`}
                     >
                       {cmd.threat.replace("-", " ")}
                     </span>

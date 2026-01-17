@@ -1,15 +1,24 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 import Link from "next/link";
 import { Shield, ChevronRight } from "lucide-react";
 import {
-  mockSessions,
   getThreatColor,
   formatDuration,
   getThreatBgColor,
 } from "@/lib/mock-data";
+import { useSessions } from "@/lib/session-context";
 
 export default function LiveSessions() {
+  const { sessions, terminateSession } = useSessions();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
@@ -45,20 +54,17 @@ export default function LiveSessions() {
         <div>
           <h2 className="text-2xl font-bold text-white">Active Sessions</h2>
           <p className="text-sm text-gray-400 mt-1">
-            {mockSessions.filter((s) => s.isActive).length} active honeypot
-            sessions • {mockSessions.length} total sessions
+            {sessions.filter((s) => s.isActive).length} active honeypot
+            sessions • {sessions.length} total sessions
           </p>
         </div>
 
         {/* Sessions Grid */}
-        <div className="space-y-4">
-          {mockSessions.map((session) => (
-            <Link
+        <div className="space-y-4 ">
+          {sessions.map((session) => (
+            <div
               key={session.id}
-              href={`/admin/sessions/${session.id}`}
-              className={`block p-6 rounded-lg border transition-all hover:border-blue-500 hover:shadow-lg ${getThreatBgColor(
-                session.threatLevel,
-              )} border-gray-700`}
+              className={`block p-6 rounded-lg border transition-all bg-gray-800 border-gray-700 hover:border-blue-500`}
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
@@ -66,7 +72,7 @@ export default function LiveSessions() {
                   <div className="flex items-center gap-4 mb-4">
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="font-semibold text-white">
+                        <h3 className="font-semibold text-white mr-5">
                           {session.id}
                         </h3>
                         {session.isActive && (
@@ -143,7 +149,7 @@ export default function LiveSessions() {
                 </div>
 
                 {/* Threat Badge & Arrow */}
-                <div className="flex flex-col items-end gap-4 ml-4">
+                <div className="flex flex-col items-end gap-2 ml-4">
                   <div
                     className={`text-right ${getThreatColor(session.threatLevel)}`}
                   >
@@ -152,7 +158,26 @@ export default function LiveSessions() {
                     </p>
                     <p className="text-xs text-gray-400 mt-1">Risk Level</p>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                  <div className="flex items-center gap-2">
+                    <Link
+                      href={`/admin/sessions/${session.id}`}
+                      className="p-2 hover:bg-gray-800 rounded-full transition-colors"
+                      title="View Details"
+                    >
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    </Link>
+                    {session.isActive && (
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          terminateSession(session.id);
+                        }}
+                        className="px-3 py-1 bg-red-900 bg-opacity-50 hover:bg-opacity-70 text-red-200 text-xs rounded border border-red-800 transition-colors"
+                      >
+                        Terminate
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -170,7 +195,7 @@ export default function LiveSessions() {
                   ))}
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

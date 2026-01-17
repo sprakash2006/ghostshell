@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { getSessionMetrics } from "@/lib/mock-data";
+import { useSessions } from "@/lib/session-context";
 import { Shield, Activity, AlertTriangle, Zap } from "lucide-react";
 import {
   LineChart,
@@ -16,26 +16,56 @@ import {
   Tooltip,
 } from "recharts";
 
-const metrics = getSessionMetrics();
-
-const riskData = [
-  { name: "Low", value: 15, color: "#22c55e" },
-  { name: "Medium", value: 35, color: "#eab308" },
-  { name: "High", value: 35, color: "#f97316" },
-  { name: "Critical", value: 15, color: "#dc2626" },
-];
-
-const timeSeriesData = [
-  { time: "00:00", attacks: 2 },
-  { time: "04:00", attacks: 5 },
-  { time: "08:00", attacks: 8 },
-  { time: "12:00", attacks: 12 },
-  { time: "16:00", attacks: 18 },
-  { time: "20:00", attacks: 24 },
-  { time: "23:59", attacks: 28 },
-];
-
 export default function AdminDashboard() {
+  const { sessions } = useSessions();
+
+  // Calculate real metrics
+  const activeSessions = sessions.filter(s => s.isActive).length;
+  const totalCommands = sessions.reduce((acc, s) => acc + s.commands.length, 0);
+  const averageRiskScore = sessions.length > 0
+    ? Math.round(sessions.reduce((acc, s) => acc + s.riskScore, 0) / sessions.length)
+    : 0;
+
+  // Real Risk Distribution Data
+  const riskCounts = { low: 0, medium: 0, high: 0, critical: 0 };
+  sessions.forEach(s => riskCounts[s.threatLevel]++);
+
+  const totalSesh = sessions.length || 1;
+  const riskData = [
+    { name: "Low", value: Math.round((riskCounts.low / totalSesh) * 100), color: "#22c55e" },
+    { name: "Medium", value: Math.round((riskCounts.medium / totalSesh) * 100), color: "#eab308" },
+    { name: "High", value: Math.round((riskCounts.high / totalSesh) * 100), color: "#f97316" },
+    { name: "Critical", value: Math.round((riskCounts.critical / totalSesh) * 100), color: "#dc2626" },
+  ];
+
+  // Real Attack Timeline Data (Simple bucket by hour for last 24h)
+  const now = Date.now();
+  const timeSeriesData = Array.from({ length: 7 }, (_, i) => {
+    const hour = new Date(now - (6 - i) * 4 * 3600000);
+    const timeLabel = `${hour.getHours().toString().padStart(2, '0')}:00`;
+    const count = sessions.filter(s =>
+      s.startTime > now - (7 - i) * 4 * 3600000 &&
+      s.startTime <= now - (6 - i) * 4 * 3600000
+    ).length;
+    return { time: timeLabel, attacks: count };
+  });
+
+  const threatDistribution = {
+    reconnaissance: 0,
+    credentialAccess: 0,
+    privilegeEscalation: 0,
+    persistence: 0,
+    destructive: 0
+  };
+
+  sessions.flatMap(s => s.commands).forEach(c => {
+    if (c.threat === "reconnaissance") threatDistribution.reconnaissance++;
+    else if (c.threat === "credential-access") threatDistribution.credentialAccess++;
+    else if (c.threat === "privilege-escalation") threatDistribution.privilegeEscalation++;
+    else if (c.threat === "persistence") threatDistribution.persistence++;
+    else if (c.threat === "destructive") threatDistribution.destructive++;
+  });
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
@@ -77,7 +107,7 @@ export default function AdminDashboard() {
               <div>
                 <p className="text-gray-400 text-sm">Total Attackers</p>
                 <p className="text-3xl font-bold text-white mt-2">
-                  {metrics.totalSessions}
+                  {sessions.length}
                 </p>
               </div>
               <AlertTriangle className="w-8 h-8 text-orange-400 opacity-20" />
@@ -90,7 +120,7 @@ export default function AdminDashboard() {
               <div>
                 <p className="text-gray-400 text-sm">Active Sessions</p>
                 <p className="text-3xl font-bold text-green-400 mt-2">
-                  {metrics.activeSessions}
+                  {activeSessions}
                 </p>
               </div>
               <Activity className="w-8 h-8 text-green-400 opacity-20" />
@@ -103,7 +133,7 @@ export default function AdminDashboard() {
               <div>
                 <p className="text-gray-400 text-sm">Commands Tracked</p>
                 <p className="text-3xl font-bold text-blue-400 mt-2">
-                  {metrics.totalCommands}
+                  {totalCommands}
                 </p>
               </div>
               <Zap className="w-8 h-8 text-blue-400 opacity-20" />
@@ -116,7 +146,7 @@ export default function AdminDashboard() {
               <div>
                 <p className="text-gray-400 text-sm">Avg Risk Score</p>
                 <p className="text-3xl font-bold text-red-400 mt-2">
-                  {metrics.averageRiskScore}
+                  {averageRiskScore}
                 </p>
               </div>
               <AlertTriangle className="w-8 h-8 text-red-400 opacity-20" />
@@ -205,31 +235,31 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <div className="text-center p-4 rounded bg-gray-700">
               <p className="text-2xl font-bold text-blue-400">
-                {metrics.threatDistribution.reconnaissance}
+                {threatDistribution.reconnaissance}
               </p>
               <p className="text-xs text-gray-400 mt-2">Reconnaissance</p>
             </div>
             <div className="text-center p-4 rounded bg-gray-700">
               <p className="text-2xl font-bold text-yellow-400">
-                {metrics.threatDistribution.credentialAccess}
+                {threatDistribution.credentialAccess}
               </p>
               <p className="text-xs text-gray-400 mt-2">Credential Access</p>
             </div>
             <div className="text-center p-4 rounded bg-gray-700">
               <p className="text-2xl font-bold text-orange-400">
-                {metrics.threatDistribution.privilegeEscalation}
+                {threatDistribution.privilegeEscalation}
               </p>
               <p className="text-xs text-gray-400 mt-2">Privilege Escalation</p>
             </div>
             <div className="text-center p-4 rounded bg-gray-700">
               <p className="text-2xl font-bold text-red-400">
-                {metrics.threatDistribution.persistence}
+                {threatDistribution.persistence}
               </p>
               <p className="text-xs text-gray-400 mt-2">Persistence</p>
             </div>
             <div className="text-center p-4 rounded bg-gray-700">
               <p className="text-2xl font-bold text-red-600">
-                {metrics.threatDistribution.destructive}
+                {threatDistribution.destructive}
               </p>
               <p className="text-xs text-gray-400 mt-2">Destructive</p>
             </div>

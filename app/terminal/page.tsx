@@ -2,12 +2,21 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { LogOut, AlertCircle } from "lucide-react";
+import { LogOut, AlertCircle, TerminalSquare } from "lucide-react";
+import { useSessions } from "@/lib/session-context";
 
 export default function Terminal() {
-  const [sessionId] = useState(
-    () => "session-" + Math.random().toString(36).substr(2, 9),
-  );
+  const { sessions, registerSession, addCommand } = useSessions();
+  const [sessionId, setSessionId] = useState("");
+
+  useEffect(() => {
+    const newId = "session-" + Math.random().toString(36).substr(2, 9);
+    setSessionId(newId);
+    registerSession(newId);
+  }, []);
+
+  const currentSession = sessions.find((s) => s.id === sessionId);
+  const isTerminated = currentSession && !currentSession.isActive;
   const [commandHistory, setCommandHistory] = useState<
     Array<{ input: string; output: string }>
   >([
@@ -61,6 +70,44 @@ export default function Terminal() {
         const output =
           commandResponses[cmd] || `bash: ${cmd}: command not found`;
         setCommandHistory([...commandHistory, { input: cmd, output }]);
+
+        // Log command to backend
+        // Determine basic threat level for demo purposes
+        let threat = "normal";
+        let riskIncrease = 0;
+
+        if (["whoami", "pwd", "ls", "cd"].includes(cmd.split(" ")[0])) {
+          threat = "normal";
+          riskIncrease = 1;
+        } else if (["ps", "top", "id"].includes(cmd.split(" ")[0])) {
+          threat = "reconnaissance";
+          riskIncrease = 5;
+        } else if (cmd.includes("nmap")) {
+          threat = "reconnaissance";
+          riskIncrease = 10;
+        } else if (cmd.includes("cat /etc/passwd")) {
+          threat = "credential-access";
+          riskIncrease = 25;
+        } else if (cmd.includes("sudo")) {
+          threat = "privilege-escalation";
+          riskIncrease = 20;
+        } else if (cmd.includes("wget") || cmd.includes("curl")) {
+          threat = "persistence";
+          riskIncrease = 15;
+        } else if (cmd.includes("rm ")) {
+          threat = "destructive";
+          riskIncrease = 50;
+        }
+
+        addCommand(sessionId, {
+          id: `cmd-${Date.now()}`,
+          timestamp: Date.now(),
+          command: cmd,
+          output: output.substring(0, 50) + "...", // Truncate for storage
+          threat,
+          riskIncrease
+        });
+
         setCurrentInput("");
         setCommandIndex(-1);
       }
@@ -140,8 +187,14 @@ export default function Terminal() {
           <div key={idx}>
             {item.input && (
               <div className="text-green-400">
-                root@corp-server:~${" "}
-                <span className="text-white">{item.input}</span>
+                {isTerminated && idx === commandHistory.length - 1 ? (
+                  <span className="text-red-500">Connection closed by remote host.</span>
+                ) : (
+                  <>
+                    root@corp-server:~${" "}
+                    <span className="text-white">{item.input}</span>
+                  </>
+                )}
               </div>
             )}
             {item.output && (
@@ -155,16 +208,20 @@ export default function Terminal() {
         {/* Input Line */}
         <div className="flex items-center gap-2">
           <span className="text-green-400">root@corp-server:~$</span>
-          <input
-            type="text"
-            value={currentInput}
-            onChange={(e) => setCurrentInput(e.target.value)}
-            onKeyDown={handleCommand}
-            autoFocus
-            className="flex-1 bg-transparent text-white outline-none caret-white"
-            placeholder="Type command..."
-            autoComplete="off"
-          />
+          {isTerminated ? (
+            <span className="text-red-500">Connection closed. Press Refresh to restart.</span>
+          ) : (
+            <input
+              type="text"
+              value={currentInput}
+              onChange={(e) => setCurrentInput(e.target.value)}
+              onKeyDown={handleCommand}
+              autoFocus
+              className="flex-1 bg-transparent text-white outline-none caret-white"
+              placeholder="Type command..."
+              autoComplete="off"
+            />
+          )}
         </div>
       </div>
 

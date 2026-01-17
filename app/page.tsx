@@ -12,8 +12,8 @@ export default function Home() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login - redirect to terminal
-    window.location.href = "/terminal";
+    // Simulate legitimate login - redirect to normal user dashboard
+    window.location.href = "/dashboard";
   };
 
   const handleConsoleAccess = (e: React.FormEvent) => {
@@ -40,22 +40,20 @@ export default function Home() {
           <div className="flex border-b border-gray-700">
             <button
               onClick={() => setActiveTab("login")}
-              className={`flex-1 py-3 px-4 text-sm font-medium transition-colors ${
-                activeTab === "login"
+              className={`flex-1 py-3 px-4 text-sm font-medium transition-colors ${activeTab === "login"
                   ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-gray-300"
-              }`}
+                }`}
             >
               <Lock className="w-4 h-4 inline mr-2" />
               Login
             </button>
             <button
               onClick={() => setActiveTab("console")}
-              className={`flex-1 py-3 px-4 text-sm font-medium transition-colors ${
-                activeTab === "console"
+              className={`flex-1 py-3 px-4 text-sm font-medium transition-colors ${activeTab === "console"
                   ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-gray-300"
-              }`}
+                }`}
             >
               <Terminal className="w-4 h-4 inline mr-2" />
               Console Access
